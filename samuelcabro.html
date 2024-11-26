@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Eres gay?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #03dac6;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        button {
+            background-color: #03dac6;
+            color: #121212;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #018786;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Eres gay?</h1>
+    <div class="buttons">
+        <button id="btn-si">Sí</button>
+        <button id="btn-no">No</button>
+    </div>
+
+    <script>
+        const btnSi = document.getElementById('btn-si');
+        const btnNo = document.getElementById('btn-no');
+
+        // Mostrar mensaje cuando se presiona "Sí"
+        btnSi.addEventListener('click', () => {
+            alert('¡Sabíamos que sí!');
+        });
+
+        // Mover el botón "No" cuando el usuario intenta apuntarlo
+        btnNo.addEventListener('mouseover', () => {
+            // Cambiar posición del botón "No"
+            btnNo.style.transform = `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)`;
+        });
+
+        // Si por algún motivo logran presionar "No"
+        btnNo.addEventListener('click', () => {
+            alert('¡Sabíamos que sí!');
+        });
+    </script>
+</body>
+</html>
